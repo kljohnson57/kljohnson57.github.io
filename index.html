@@ -4,221 +4,804 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kathryn Johnson | Portfolio</title>
+  <meta name="description" content="Kathryn Johnson's portfolio featuring data analytics, programming, visualization, and web development projects.">
+  <title>Kathryn Johnson | Data & Technology Portfolio</title>
+
   <style>
+    :root {
+      --navy: #10283f;
+      --navy-light: #1c4058;
+      --teal: #087f78;
+      --teal-light: #e3f5f1;
+      --background: #f5f8fa;
+      --white: #ffffff;
+      --text: #23364a;
+      --muted: #617487;
+      --border: #dce6eb;
+    }
+
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      color: #243247;
-      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
     }
+
+    a { color: var(--teal); }
+
+    a:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 4px;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 25px;
+    }
+
+    /* NAVIGATION */
+
     header {
-      background: #ffffff;
-      padding: 20px 8%;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      border-bottom: 1px solid #e1e6ed;
+      padding-top: 18px;
+      padding-bottom: 18px;
     }
-    header strong { font-size: 20px; }
+
+    .logo {
+      font-weight: 750;
+      font-size: 21px;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--teal); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
     nav a {
-      margin-left: 18px;
-      color: #243247;
+      color: var(--text);
       text-decoration: none;
-    }
-    nav a:hover { color: #2563eb; }
-    section {
-      max-width: 1050px;
-      margin: auto;
-      padding: 65px 25px;
-    }
-    .hero { padding-top: 95px; padding-bottom: 95px; }
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 56px);
-      line-height: 1.2;
-      margin: 0 0 15px;
-    }
-    .hero h1 span { color: #2563eb; }
-    .subtitle { font-size: 20px; color: #52647c; }
-    .hero p { max-width: 700px; }
-    .button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 7px;
-      text-decoration: none;
-      margin: 15px 12px 0 0;
-    }
-    h2 { font-size: 29px; margin-bottom: 24px; }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skills span {
-      background: #e7efff;
-      color: #2454a6;
-      padding: 8px 15px;
-      border-radius: 20px;
       font-size: 14px;
+      font-weight: 600;
     }
-    .projects {
+
+    nav a:hover { color: var(--teal); }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(
+        125deg, #10283f 0%, #1c4058 65%, #126a70 100%
+      );
+      color: white;
+      padding: 105px 0;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 750;
+      color: #8ee3d5;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.15;
+      margin: 15px 0;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span { color: #8ee3d5; }
+
+    .hero-subtitle {
+      font-size: 19px;
+      color: #d0e2ed;
+      margin-bottom: 22px;
+    }
+
+    .hero-description {
+      color: #e2edf4;
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 7px;
+      font-weight: 650;
+      font-size: 14px;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .btn-primary {
+      background: #8ee3d5;
+      color: #10283f;
+    }
+
+    .btn-secondary {
+      border: 1px solid #a5bdcd;
+      color: white;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .panel-label {
+      color: #a9c9d5;
+      font-size: 12px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .panel-item {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .panel-item:last-child { border-bottom: none; }
+
+    .panel-item strong {
+      display: block;
+      color: white;
+      font-size: 16px;
+    }
+
+    .panel-item small { color: #c4dce7; }
+
+    /* GENERAL SECTIONS */
+
+    section { scroll-margin-top: 95px; }
+
+    .section { padding: 85px 0; }
+
+    .section-label {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 750;
+      margin-bottom: 7px;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 34px;
+      line-height: 1.25;
+      margin: 0 0 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 35px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .info-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+
+    .info-box h3 {
+      margin: 0 0 15px;
+      color: var(--navy);
+    }
+
+    .info-row {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-row small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .info-row strong { font-size: 14px; }
+
+    /* SKILLS */
+
+    .skills-section { background: white; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-    .card {
-      background: white;
-      padding: 25px;
-      border: 1px solid #e1e6ed;
+
+    .skill-card {
+      padding: 26px;
+      border: 1px solid var(--border);
       border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+      background: #fbfcfd;
     }
-    .card h3 { margin-top: 0; }
-    .tools { color: #52647c; font-size: 14px; }
-    .card a { color: #2563eb; font-weight: bold; }
-    footer {
+
+    .skill-card h3 {
+      color: var(--navy);
+      font-size: 17px;
+      margin: 0 0 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--teal-light);
+      color: #075d58;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(16,40,63,0.09);
+    }
+
+    .project-visual {
+      min-height: 155px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(135deg, #16334b, #167b78);
+      color: white;
+    }
+
+    .project-visual.spotify {
+      background: linear-gradient(135deg, #164b45, #23946d);
+    }
+
+    .project-visual.budget {
+      background: linear-gradient(135deg, #23476c, #3975ac);
+    }
+
+    .project-visual.rideshare {
+      background: linear-gradient(135deg, #35455e, #6c7794);
+    }
+
+    .project-visual small {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.8;
+    }
+
+    .project-visual strong {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    .project-content { padding: 27px; }
+
+    .project-content h3 {
+      color: var(--navy);
+      font-size: 21px;
+      margin: 0 0 12px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 95px;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--teal);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .project-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      background: var(--navy);
+      color: white;
       text-align: center;
-      padding: 30px;
-      border-top: 1px solid #e1e6ed;
-      color: #52647c;
+    }
+
+    .contact-section h2 { color: white; }
+
+    .contact-section p {
+      color: #d0e2ed;
+      max-width: 620px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .contact-links .btn {
+      min-width: 135px;
+      text-align: center;
+    }
+
+    footer {
+      background: #0b2032;
+      color: #a9bdcb;
+      padding: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .about-grid,
+      .skills-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding: 70px 0; }
+      .section { padding: 60px 0; }
+      .hero-grid { gap: 35px; }
+      .about-grid { gap: 25px; }
+      .project-content p { min-height: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .project-card { transition: none; }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <strong>Kathryn Johnson</strong>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- NAVIGATION -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">Kathryn<span>.</span></a>
 
-<main>
-  <section class="hero">
-    <h1>Hi, I'm <span>Kathryn Johnson.</span></h1>
-    <p class="subtitle">
-      Information Science Student | Data Science Certificate
-    </p>
-    <p>
-      I'm a student at the University of Wisconsin-Madison
-      interested in using data, technology, and analytics
-      to solve problems and support business decisions.
-      I enjoy working with data, developing technical
-      solutions, and communicating meaningful insights.
-    </p>
-    <a class="button" href="#projects">View My Projects</a>
-    <a class="button" href="https://github.com/kljohnson57"
-       target="_blank" rel="noopener noreferrer">GitHub</a>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am pursuing a B.S. in Information Science and
-      a certificate in Data Science at the University
-      of Wisconsin-Madison, with an expected graduation
-      date of August 2027.
-    </p>
-    <p>
-      Through coursework and projects, I have developed
-      experience in programming, data analysis,
-      visualization, web development, and user-centered
-      design. I am interested in opportunities that
-      combine technology, analytics, and business.
-    </p>
-
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <span>Python</span>
-      <span>R</span>
-      <span>SQL</span>
-      <span>Tableau</span>
-      <span>Excel</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Flask</span>
-      <span>Figma</span>
-      <span>Data Visualization</span>
-      <span>Data Analysis</span>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="projects">
+  <main>
 
-      <article class="card">
-        <h3>BMW Sales Data Website</h3>
-        <p class="tools">Python | Pandas | Flask | HTML</p>
-        <p>
-          Developed a data-driven website using BMW
-          sales data, featuring visualizations,
-          A/B testing, and an email subscription
-          feature.
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            Data | Technology | Analytics
+          </div>
+
+          <h1>Hi, I'm <span>Kathryn Johnson.</span></h1>
+
+          <p class="hero-subtitle">
+            Information Science Student |
+            Data Science Certificate
+          </p>
+
+          <p class="hero-description">
+            I'm a student at the University of
+            Wisconsin-Madison passionate about using
+            data and technology to solve problems,
+            uncover insights, and support informed
+            business decisions.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projects">
+              Explore My Projects
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://github.com/kljohnson57"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="panel-label">Areas of Interest</div>
+
+          <div class="panel-item">
+            <strong>Data & Analytics</strong>
+            <small>Exploring patterns and insights</small>
+          </div>
+
+          <div class="panel-item">
+            <strong>Technology & Development</strong>
+            <small>Building technical solutions</small>
+          </div>
+
+          <div class="panel-item">
+            <strong>Business Applications</strong>
+            <small>Supporting data-driven decisions</small>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="section-label">01 / About</div>
+          <h2>About Me</h2>
+
+          <p>
+            I am pursuing a B.S. in Information Science
+            and a certificate in Data Science at the
+            University of Wisconsin-Madison.
+          </p>
+
+          <p>
+            My coursework and projects have given me
+            experience in programming, statistical
+            analysis, data visualization, web development,
+            and user-centered design.
+          </p>
+
+          <p>
+            I enjoy approaching challenges from both
+            technical and business perspectives, using
+            analytical thinking to understand problems
+            and communicate meaningful findings.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>Education</h3>
+
+          <div class="info-row">
+            <small>University</small>
+            <strong>University of Wisconsin-Madison</strong>
+          </div>
+
+          <div class="info-row">
+            <small>Degree</small>
+            <strong>B.S. Information Science</strong>
+          </div>
+
+          <div class="info-row">
+            <small>Certificate</small>
+            <strong>Data Science</strong>
+          </div>
+
+          <div class="info-row">
+            <small>Expected Graduation</small>
+            <strong>August 2027</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-label">02 / Expertise</div>
+        <h2>Technical Skills</h2>
+
+        <p class="section-intro">
+          Tools and technologies I have worked with
+          through academic coursework and projects.
         </p>
-      </article>
 
-      <article class="card">
-        <h3>Spotify Data Analysis</h3>
-        <p class="tools">R | Data Analysis | Visualization</p>
-        <p>
-          Explored music-related data using R to
-          identify patterns and communicate findings
-          through data visualization.
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <h3>Programming & Development</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Flask</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Data & Analytics</h3>
+            <div class="tags">
+              <span class="tag">Pandas</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Excel</span>
+              <span class="tag">Statistics</span>
+              <span class="tag">Data Cleaning</span>
+              <span class="tag">Data Visualization</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Design & Collaboration</h3>
+            <div class="tags">
+              <span class="tag">Figma</span>
+              <span class="tag">UX/UI Design</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Data Storytelling</span>
+              <span class="tag">Problem Solving</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-label">03 / Selected Work</div>
+        <h2>Featured Projects</h2>
+
+        <p class="section-intro">
+          A selection of projects exploring data
+          analysis, visualization, web development,
+          and user-centered design.
         </p>
-      </article>
 
-      <article class="card">
-        <h3>Budget Flow</h3>
-        <p class="tools">HTML | CSS | Web Design</p>
-        <p>
-          Designed a personal finance website concept
-          to help students and recent graduates
-          better understand and organize their finances.
+        <div class="project-grid">
+
+          <!-- BMW -->
+          <article class="project-card">
+            <div class="project-visual">
+              <small>Data Application</small>
+              <strong>BMW Sales Analysis</strong>
+            </div>
+
+            <div class="project-content">
+              <h3>BMW Sales Data Website</h3>
+
+              <p>
+                Developed a Flask-based data website
+                using BMW sales data. Implemented
+                visualizations, a JSON data endpoint,
+                A/B testing, and an email subscription
+                feature.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Flask</span>
+                <span class="tag">HTML</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- SPOTIFY -->
+          <article class="project-card">
+            <div class="project-visual spotify">
+              <small>Data Exploration</small>
+              <strong>Spotify Data Analysis</strong>
+            </div>
+
+            <div class="project-content">
+              <h3>Spotify Data Analysis</h3>
+
+              <p>
+                Analyzed music-related data using R
+                to explore patterns and communicate
+                findings through data visualization.
+              </p>
+
+              <div class="tags">
+                <span class="tag">R</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">Visualization</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- BUDGET FLOW -->
+          <article class="project-card">
+            <div class="project-visual budget">
+              <small>Web Development</small>
+              <strong>Budget Flow</strong>
+            </div>
+
+            <div class="project-content">
+              <h3>Budget Flow</h3>
+
+              <p>
+                Designed and developed a personal
+                finance website layout intended to
+                help students and recent graduates
+                organize their finances and better
+                understand changing income and expenses.
+              </p>
+
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Web Design</span>
+              </div>
+
+              <a class="project-link"
+                 href="https://github.com/kljohnson57/budget-flow"
+                 target="_blank" rel="noopener noreferrer">
+                View on GitHub &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- RIDESHARE -->
+          <article class="project-card">
+            <div class="project-visual rideshare">
+              <small>Product & UX Design</small>
+              <strong>Rideshare Comparison</strong>
+            </div>
+
+            <div class="project-content">
+              <h3>Rideshare Comparison App</h3>
+
+              <p>
+                Collaborated on a mobile app design
+                concept that helps users compare
+                rideshare options based on price,
+                travel time, and personal preferences.
+                Created interface designs and
+                prototypes using Figma.
+              </p>
+
+              <div class="tags">
+                <span class="tag">Figma</span>
+                <span class="tag">UX/UI</span>
+                <span class="tag">Prototyping</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="project-note">
+          Additional project repositories and
+          demonstrations will be added as available.
         </p>
-        <a href="https://github.com/kljohnson57/budget-flow"
-           target="_blank" rel="noopener noreferrer">
-          View Project
-        </a>
-      </article>
+      </div>
+    </section>
 
-      <article class="card">
-        <h3>Rideshare Comparison App</h3>
-        <p class="tools">Figma | UX/UI Design | Prototyping</p>
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-label" style="color:#8ee3d5">
+          04 / Connect
+        </div>
+
+        <h2>Let's Connect</h2>
+
         <p>
-          Designed a mobile application concept that
-          helps users compare rideshare options based
-          on price, travel time, and preferences.
+          I'm interested in opportunities involving
+          data analytics, technology, and business.
+          Feel free to reach out!
         </p>
-      </article>
 
-    </div>
-  </section>
+        <div class="contact-links">
+          <a class="btn btn-primary"
+             href="mailto:katymckjohn04@gmail.com">
+            Email Me
+          </a>
 
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <p>
-      I'm interested in internship opportunities
-      involving data, technology, and business.
-    </p>
-    <p>
-      <a href="https://github.com/kljohnson57"
-         target="_blank" rel="noopener noreferrer">
-        Visit My GitHub
-      </a>
-    </p>
-  </section>
-</main>
+          <a class="btn btn-secondary"
+             href="https://www.linkedin.com/in/kathryn-johnson-38762733b"
+             target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
 
-<footer>
-  &copy; 2026 Kathryn Johnson
-</footer>
+          <a class="btn btn-secondary"
+             href="https://github.com/kljohnson57"
+             target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2026 Kathryn Johnson |
+    Built with HTML & CSS |
+    Hosted on GitHub Pages
+  </footer>
 
 </body>
 </html>
