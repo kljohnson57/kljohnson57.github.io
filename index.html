@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kathryn Johnson | Portfolio</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #243247;
+      line-height: 1.6;
+    }
+    header {
+      background: #ffffff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid #e1e6ed;
+    }
+    header strong { font-size: 20px; }
+    nav a {
+      margin-left: 18px;
+      color: #243247;
+      text-decoration: none;
+    }
+    nav a:hover { color: #2563eb; }
+    section {
+      max-width: 1050px;
+      margin: auto;
+      padding: 65px 25px;
+    }
+    .hero { padding-top: 95px; padding-bottom: 95px; }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      line-height: 1.2;
+      margin: 0 0 15px;
+    }
+    .hero h1 span { color: #2563eb; }
+    .subtitle { font-size: 20px; color: #52647c; }
+    .hero p { max-width: 700px; }
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      margin: 15px 12px 0 0;
+    }
+    h2 { font-size: 29px; margin-bottom: 24px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skills span {
+      background: #e7efff;
+      color: #2454a6;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border: 1px solid #e1e6ed;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    }
+    .card h3 { margin-top: 0; }
+    .tools { color: #52647c; font-size: 14px; }
+    .card a { color: #2563eb; font-weight: bold; }
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #e1e6ed;
+      color: #52647c;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <strong>Kathryn Johnson</strong>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Hi, I'm <span>Kathryn Johnson.</span></h1>
+    <p class="subtitle">
+      Information Science Student | Data Science Certificate
+    </p>
+    <p>
+      I'm a student at the University of Wisconsin-Madison
+      interested in using data, technology, and analytics
+      to solve problems and support business decisions.
+      I enjoy working with data, developing technical
+      solutions, and communicating meaningful insights.
+    </p>
+    <a class="button" href="#projects">View My Projects</a>
+    <a class="button" href="https://github.com/kljohnson57"
+       target="_blank" rel="noopener noreferrer">GitHub</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am pursuing a B.S. in Information Science and
+      a certificate in Data Science at the University
+      of Wisconsin-Madison, with an expected graduation
+      date of August 2027.
+    </p>
+    <p>
+      Through coursework and projects, I have developed
+      experience in programming, data analysis,
+      visualization, web development, and user-centered
+      design. I am interested in opportunities that
+      combine technology, analytics, and business.
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <span>Python</span>
+      <span>R</span>
+      <span>SQL</span>
+      <span>Tableau</span>
+      <span>Excel</span>
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Flask</span>
+      <span>Figma</span>
+      <span>Data Visualization</span>
+      <span>Data Analysis</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+
+      <article class="card">
+        <h3>BMW Sales Data Website</h3>
+        <p class="tools">Python | Pandas | Flask | HTML</p>
+        <p>
+          Developed a data-driven website using BMW
+          sales data, featuring visualizations,
+          A/B testing, and an email subscription
+          feature.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Spotify Data Analysis</h3>
+        <p class="tools">R | Data Analysis | Visualization</p>
+        <p>
+          Explored music-related data using R to
+          identify patterns and communicate findings
+          through data visualization.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Budget Flow</h3>
+        <p class="tools">HTML | CSS | Web Design</p>
+        <p>
+          Designed a personal finance website concept
+          to help students and recent graduates
+          better understand and organize their finances.
+        </p>
+        <a href="https://github.com/kljohnson57/budget-flow"
+           target="_blank" rel="noopener noreferrer">
+          View Project
+        </a>
+      </article>
+
+      <article class="card">
+        <h3>Rideshare Comparison App</h3>
+        <p class="tools">Figma | UX/UI Design | Prototyping</p>
+        <p>
+          Designed a mobile application concept that
+          helps users compare rideshare options based
+          on price, travel time, and preferences.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>
+      I'm interested in internship opportunities
+      involving data, technology, and business.
+    </p>
+    <p>
+      <a href="https://github.com/kljohnson57"
+         target="_blank" rel="noopener noreferrer">
+        Visit My GitHub
+      </a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Kathryn Johnson
+</footer>
+
+</body>
+</html>
